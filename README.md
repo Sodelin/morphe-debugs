@@ -216,10 +216,19 @@ com.discord remains installed. Credit: VenusIsJaded and contributors.
 The exact v1.20.0 MPP embeds a settings parser that accepts a plain JSON
 preset through Discord Settings → Venus → Backup and restore. The separate
 Discord-Venus-Debugs-Starter.json copy in Downloads matches the checked-in
-preset. The preset keys were checked against that bundle. Restore can
-reset omitted keys, so save an existing Venus profile before importing.
-Import requires in-app confirmation and was not exercised. Build-time
-patch inclusion does not confirm a saved preference or runtime behavior.
+preset. The preset keys were checked against that bundle. Use Restore
+for a fresh profile or when you intend to replace the current settings.
+The pinned restore dialog explicitly warns that it replaces settings.
+During restore Venus supplies defaults for omitted settings in enabled
+patch groups. For a profile you already use, enable the desired switches
+individually in Venus settings to preserve your other preferences. The
+preset enables Voice channel options without selecting a custom volume
+or audio output.
+
+A Venus settings export may include private user IDs, custom themes,
+icon packs and locally edited server names. Keep any export private. It
+is separate from Discord's account recovery codes. Import requires
+in-app confirmation and was not exercised.
 
 ### Music Debugs 9.30.53
 
