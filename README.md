@@ -223,3 +223,10 @@ Removed 1,146,028,032 allocated bytes from eleven superseded local
 trial APKs and the negative-control archive after checking for a Java
 build and open or mapped files. Downloaded originals, installed outputs,
 known rollback APKs, signing material, source and diagnostics were retained.
+
+Run `sh build-music-debugs.sh ORIGINAL_9.30.53_APK` for the same 16-patch
+selection. The recipe pins both Morphe assets, checks the original APK
+version and signing certificate, and verifies the output signature and
+separate package ID. A full repeat build passed. The installed clone APK
+was also refused as an input to this stock-source recipe. The repeat
+output was not reinstalled.
