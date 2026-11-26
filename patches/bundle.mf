@@ -4,4 +4,3 @@ Description: Independent app design patches
 Version: 0.1.0
 Author: Morphe Debugs contributors
 Patcher-Version: 2.4.0
-

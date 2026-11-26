@@ -37,3 +37,5 @@ using `patch -p .cache/debugs-0.1.0.mpp --exclusive -e 'Debugs launcher label'`.
 Keep the same signing identity for updates. The patch accepts only the
 clone package. The output APK's package ID and app label were checked with
 aapt. The bundle is tested in Morphe Desktop; Manager import is unverified.
+
+Android accepted the same-signature update through background ADB.
