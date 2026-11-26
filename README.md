@@ -386,3 +386,13 @@ connected through ADB to verify this batch. The command checks that each
 original package is present and compares each installed clone's base APK
 to the digest of its verified build. It reads package metadata and APK
 bytes on the device and requires no account credentials.
+
+### Discord native screen-share compatibility
+
+The Discord 350.8 original and installed Venus build declare the same
+media-projection foreground-service permission and Discord
+`ForegroundService` type bitmask (`0xe1`). The ARM64 `libdiscord.so`
+in the original input split and in the merged Venus APK have matching
+SHA-256 digests. These checks verify packaging only. A live call with
+Android capture consent and receiver-side picture and audio confirmation
+remains necessary to verify native screen sharing.
