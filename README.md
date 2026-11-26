@@ -324,3 +324,12 @@ display-scoped tap, and returned to off after a second tap. This tests
 the switch interaction. The feed had no visible Games button at the
 time, so actual removal or persistence across restart was not tested.
 No capture file or account input was retained.
+
+A later virtual-display test verified that enabling Hide Create button
+removed the Create item from the signed-out navigation bar. The same
+setting still showed enabled after reopening Morphe settings. An off tap
+was attempted, but the bar did not immediately restore before the
+display's foreground changed, so final preference restoration is
+unverified. Further input stopped. The copied frame was memory-only,
+and future capture must recheck the resumed package and display before
+each capture or interaction.
