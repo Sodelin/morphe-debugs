@@ -340,3 +340,10 @@ An end-to-end rebuild from the pinned 2624051 XAPK verified 28 upstream
 patch applications and the separate launcher label. The recipe checked
 the APK signature, clone package, Reddit Debugs label, and ARM64 libraries.
 This exact rebuild was verified offline and was not installed.
+
+A follow-up compared the rebuilt APK byte for byte with the previously
+verified expanded APK and measured the same SHA-256 on the installed
+Reddit Debugs clone:
+`8ab435348c8508e0affdeefbfe8eef1dedde45a8a2546ce2b6eaf746b25be058`.
+This connects the reproducible recipe to the already-installed artifact
+and its prior UI and rollback observations. No reinstall was needed.
