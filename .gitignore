@@ -1,3 +1,7 @@
 .cache/
 *.apk
 *.jks
+*.apkm
+*.apks
+*.xapk
+*.keystore

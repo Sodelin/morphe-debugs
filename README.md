@@ -2,6 +2,39 @@
 
 Independent patch design and verification batches. Upstream tools and patches are by MorpheApp and their respective contributors. Preserve upstream notices when distributing derivative source.
 
+## Rebuild the verified batches
+
+Use Java 21 and the Android SDK's `aapt` and `apksigner` on PATH.
+The recipes also use `sha256sum` and standard shell utilities. The Reddit
+recipe needs `unzip`; the Discord input verifier needs Python 3.11 or newer.
+
+Create a local `.cache` directory and place these release assets there
+under the exact names shown. The recipes check their digests before use.
+
+| Local filename | Release |
+| --- | --- |
+| `morphe-desktop-2.3.0-all.jar` | [Morphe Desktop 2.3.0](https://github.com/MorpheApp/morphe-desktop/releases/tag/v2.3.0) |
+| `patches-2.3.0.mpp` | [Morphe Patches 2.3.0](https://github.com/MorpheApp/morphe-patches/releases/tag/v2.3.0) |
+| `venus-1.20.0.mpp` | [Venus Patches 1.20.0](https://github.com/VenusIsJaded/Venus-Patches/releases/tag/v1.20.0) |
+| `debugs-0.1.0.mpp` | [Debugs reproducible bundle](https://github.com/Sodelin/morphe-debugs/releases/tag/v0.1.0-reproducible), or build with `sh build-debug-bundle.sh` |
+
+Supply the publisher-signed app inputs separately. The recipes expect
+Discord 350008 with its ARM64 and density splits, the pinned Reddit
+2624051 XAPK, and YouTube Music 9.30.53 (93053240).
+
+```sh
+sh build-discord-venus.sh /path/to/original-discord.xapk
+sh build-reddit-debugs.sh /path/to/original-reddit.xapk
+sh build-music-debugs.sh /path/to/original-music.apk
+```
+
+The recipes produce signed APKs in `.cache` and accept an optional
+output path. Before updating an installed clone, compare its signing
+certificate with the new APK. Keep existing signing material private
+and reuse the selected Morphe signing identity for in-place updates.
+The device verifier below identifies the exact verified batch signed
+with the original build identity; another identity changes the APK hash.
+
 ## Reddit baseline
 
 - [Morphe Desktop v2.3.0](https://github.com/MorpheApp/morphe-desktop/releases/tag/v2.3.0), SHA-256 e0e49525e1fbe1108d6cfd7398d39e0cd489c58a753e63653c1e8f11a0099757.
