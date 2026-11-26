@@ -111,3 +111,15 @@ release digest and had the same signing certificate as the installed
 APK was retained locally. No Manager import or Discord bundle test was
 performed in this update. The public Debugs MPP checksum verified after
 a fresh GitHub release download.
+
+### Headless split input verified
+
+Desktop v2.3.0 accepts an APKS archive even though its help calls the input
+an APK. A read-only pull of the installed YouTube 21.47.483-BETA base,
+ARM64, English and XXHDPI files was assembled into a local ZIP with those
+four APKs at its root and the .apks extension. Desktop merged all four
+and applied only the upstream Clone app test. The signed output had the
+clone package, ARM64 libraries and no required-split declaration.
+This verifies the merge workflow using a real complete input set. It
+does not establish YouTube patch or runtime compatibility. The output
+was not installed. Discord still lacks its original matching splits.
