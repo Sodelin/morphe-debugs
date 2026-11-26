@@ -123,3 +123,19 @@ clone package, ARM64 libraries and no required-split declaration.
 This verifies the merge workflow using a real complete input set. It
 does not establish YouTube patch or runtime compatibility. The output
 was not installed. Discord still lacks its original matching splits.
+
+### Broad YouTube trial and Reddit guest batch
+
+The broad Desktop 2.3.0 trial against the complete 21.47.483-BETA YouTube
+input selected only Clone app under normal compatibility checks. Its
+output stayed local and was not installed. The existing app.morphe.android.youtube
+reported 21.20.405 and was not targeted.
+
+Reddit 2026.24.0 was built without continue-on-error by selecting only
+the upstream Clone app and Start as guest patches in exclusive mode.
+A separate pass applied the Debugs launcher label to the clone. The
+result retained com.reddit.frontpage.morphe, the Reddit Debugs label and
+the existing certificate. Android accepted a background reinstall over
+the exact verified previous APK, and installed bytes matched the new
+APK. The previous working labeled APK remains available locally.
+In-app guest behavior is not yet verified.
