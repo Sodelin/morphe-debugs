@@ -230,3 +230,26 @@ version and signing certificate, and verifies the output signature and
 separate package ID. A full repeat build passed. The installed clone APK
 was also refused as an input to this stock-source recipe. The repeat
 output was not reinstalled.
+
+### Reddit Debugs with the publisher-signed ARM64 input
+
+The earlier file named reddit-stock.apk was copied from com.reddit.frontpage,
+which reports Morphe Manager as installer and has the synthetic version code
+2147483647. It was not an original publisher-signed input. This explains
+why the build notes do not generalize to the original 2026.24.0 release.
+
+The versioned APKPure .net XAPKs for 2624050 and 2624051 were verified
+member by member using the [published Reddit signing fingerprint](https://www.apkmirror.com/apk/redditinc/reddit/reddit-2026-24-0-release/reddit-2026-24-0-android-apk-download/).
+Both built all 14 selected upstream patches. The first variant carried
+only ARMv7 native libraries and Android refused it. The second had 33
+matching APK members and the rebuilt output retained six ARM64 libraries.
+It applied Clone app, Start as guest, Keep feed position, Customize post
+layout, Hide navigation buttons, Full width feed media, Feed media max
+height, Media viewer black background, Media viewer fade, Remember
+collapsed comments, Copy text, Show flairs in home feed, High quality
+avatars, and Sanitize sharing links. The independent Debugs launcher
+label applied as a second pass.
+
+Android accepted the same-signature background update to the Debugs
+clone and installed bytes matched that build. The previous guest-only
+build remains the rollback artifact. No account or feature UI was tested.
