@@ -210,3 +210,16 @@ the generated config had upstream defaults enabled, and was not installed.
 Android accepted the 16-patch build and the installed APK hash matched.
 Both existing Music packages remain present. Playback, sign-in and UI are
 unverified. Credit: MorpheApp and the individual upstream patch contributors.
+
+### YouTube source search and cache reconciliation
+
+The versioned download requests for compatible YouTube 21.30.216,
+21.28.208, 21.23.492 and 20.26.46 ended at HTTP 403 through the available
+APKPure route. APKMirror listed supported versions but also refused the
+direct request. No compatible original was obtained in this pass.
+The stock YouTube and existing Morphe install were left in place.
+
+Removed 1,146,028,032 allocated bytes from eleven superseded local
+trial APKs and the negative-control archive after checking for a Java
+build and open or mapped files. Downloaded originals, installed outputs,
+known rollback APKs, signing material, source and diagnostics were retained.
