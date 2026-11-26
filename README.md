@@ -421,3 +421,11 @@ app to be present. If the verified clone is already installed, it skips
 installation. Otherwise it checks the APK signature, uses Android's
 streamed in-place install, and checks the installed digest afterward.
 Keep the normal ADB device selection pointed at your intended phone.
+
+The install command was exercised on-device with Reddit Debugs. Android
+accepted the retained 15-patch same-signer APK first and its installed
+digest matched the rollback artifact. The command then detected the
+different digest, streamed the 29-patch update, and verified the
+installed result. All three clones matched the batch after the test.
+This verifies the update path without opening app accounts or checking
+their data in the UI.
