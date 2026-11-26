@@ -293,3 +293,18 @@ read back from the installed path matched each expected SHA-256 in
 sequence. Neither install uninstalled the package, and com.reddit.frontpage
 remained present. This verifies package rollback only; the app was not
 opened and account, preferences and playback were not exercised.
+
+### Background startup smoke tests
+
+The installed scrcpy 5.0.1 client needed FFmpeg 9.1 libraries. The
+Termux package was extracted into an isolated cache and loaded for
+scrcpy only. The installed FFmpeg package was not changed.
+Two serial 16-second tests used dedicated 720x1280 virtual displays,
+with audio and clipboard forwarding disabled and video sent to the
+null device. Reddit Debugs reached its resumed launcher on its virtual
+display and had a live process. Music Debugs reached its launcher with
+a live process, then paused for Android's permission request. No
+permission was granted or denied. Both virtual displays disappeared
+after their original sessions ended. No app screen was retained.
+This verifies startup only. Menus, feature toggles, sign-in, and
+playback were not exercised.
