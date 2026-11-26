@@ -187,3 +187,26 @@ preset. The preset keys were checked against that bundle. Restore can
 reset omitted keys, so save an existing Venus profile before importing.
 Import requires in-app confirmation and was not exercised. Build-time
 patch inclusion does not confirm a saved preference or runtime behavior.
+
+### Music Debugs 9.30.53
+
+The original 93053240 APK from the versioned APKPure .net endpoint
+verified under the same APK signing certificate digests as the installed
+Google Play YouTube Music package. A first clone hit a duplicate Android
+permission. The [upstream Clone app source](https://github.com/MorpheApp/morphe-patches/blob/v2.3.0/patches/src/main/kotlin/app/morphe/patches/all/misc/clone/CloneAppPatch.kt)
+delegates permission and provider namespacing for YouTube Music to
+GmsCore support. With that patch included, the compiled manifest declared
+the receiver permission and app-specific providers under the clone ID.
+
+The exact successful selections were Clone app
+(-OpackageName=com.google.android.apps.youtube.music.debugs),
+Custom branding (-OcustomName='Music Debugs'), GmsCore support, Crossfade,
+A-B loop, Remember repeat state, Remember shuffle state, Navigation bar,
+Change miniplayer color, Miniplayer previous and next buttons, Theme,
+Force original audio, Media notification controls, Sanitize sharing links,
+Open system share sheet, and Playback speed. These were direct CLI options
+in exclusive mode. An earlier options-file experiment selected 57 because
+the generated config had upstream defaults enabled, and was not installed.
+Android accepted the 16-patch build and the installed APK hash matched.
+Both existing Music packages remain present. Playback, sign-in and UI are
+unverified. Credit: MorpheApp and the individual upstream patch contributors.
