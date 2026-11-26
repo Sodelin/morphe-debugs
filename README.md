@@ -396,3 +396,11 @@ in the original input split and in the merged Venus APK have matching
 SHA-256 digests. These checks verify packaging only. A live call with
 Android capture consent and receiver-side picture and audio confirmation
 remains necessary to verify native screen sharing.
+
+The pinned Venus 1.20.0 bundle's Voice channel options expose starting
+call volume, audio output routing, join and leave chimes, and a goodbye
+sound. The starter preset selects this patch's settings group. The
+current recipe contains no custom solo-call lifetime, screen-share
+resolution or frame-rate, or FLAC transmission patch. Those behaviors
+should be verified independently of the voice options and the Android
+screen-capture manifest check.
