@@ -24,3 +24,16 @@ and custom design are unverified. The APK and its signing data stay local.
 `build-reddit-clone.sh` reproduces the build with a trusted local Reddit APK
 and the pinned assets under `.cache`. It checks the output before any manual
 install step. The installed clone is a baseline for future design tests.
+
+## Debugs 0.1.0
+
+This independent resource patch gives the Reddit clone the application
+label Reddit Debugs so it can be told apart from stock Reddit. The bundle
+compiles against the pinned Morphe Desktop CLI and the CLI lists the patch.
+The upstream Clone app patch remains a separate MorpheApp contribution.
+
+Run `sh build-debug-bundle.sh` and apply the resulting bundle to a clone
+using `patch -p .cache/debugs-0.1.0.mpp --exclusive -e 'Debugs launcher label'`.
+Keep the same signing identity for updates. The patch accepts only the
+clone package. The output APK's package ID and app label were checked with
+aapt. The bundle is tested in Morphe Desktop; Manager import is unverified.
