@@ -139,3 +139,11 @@ the existing certificate. Android accepted a background reinstall over
 the exact verified previous APK, and installed bytes matched the new
 APK. The previous working labeled APK remains available locally.
 In-app guest behavior is not yet verified.
+
+`build-discord-venus.sh` records the exact 15-patch batch and accepts a
+complete trusted original split archive. It checks the pinned tools and
+signed output, requires the distinct Venus package and refuses an
+unresolved required-split declaration. Its base-only refusal was tested.
+The complete Discord build is still untested. A listing for the 350.8
+XAPK was found on Captain Droid, but the download could not be obtained
+through the current route. Do not treat the listing as verified APK bytes.
