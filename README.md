@@ -414,6 +414,14 @@ resolution or frame-rate, or FLAC transmission patch. Those behaviors
 should be verified independently of the voice options and the Android
 screen-capture manifest check.
 
+Discord's [voice protocol](https://docs.discord.com/developers/topics/voice-connections#transport-encryption-and-sending-voice)
+uses Opus and documents a sound-share mode for live media. This Venus
+build does not add FLAC passthrough or transfer the source file as part
+of a live stream. Sending the source is a separate file transfer.
+[Discord mobile video uploads](https://support.discord.com/hc/en-us/articles/9665451164951-Video-Upload-Quality-Settings-on-Mobile-FAQ)
+can compress video. Use a private link to the original when exact bytes
+matter.
+
 To install a local APK from this exact batch, run
 `sh verify-installed-builds.sh --install /path/to/verified.apk`.
 It checks the local digest and requires the corresponding original
