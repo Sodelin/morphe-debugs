@@ -40,6 +40,17 @@ if printf '%s\n' "$manifest" | grep -q 'requiredSplitTypes.*base__'; then
   echo 'Output still requires additional splits.' >&2
   exit 1
 fi
+# Discord 350.8 declares media projection on this foreground service.
+if ! printf '%s\n' "$manifest" | awk '
+  /^[[:space:]]*E: / { service = 0 }
+  /android:name.*"android.permission.FOREGROUND_SERVICE_MEDIA_PROJECTION"/ { permission = 1 }
+  /android:name.*"com.discord.foreground_service.ForegroundService"/ { service = 1 }
+  service && /android:foregroundServiceType.*0xe1$/ { projection = 1 }
+  END { exit !(permission && projection) }
+'; then
+  echo 'Output is missing the Discord 350.8 screen-capture service configuration.' >&2
+  exit 1
+fi
 mv -n -- "$candidate" "$output"
 test ! -e "$candidate"
 printf '%s\n' "$output"
