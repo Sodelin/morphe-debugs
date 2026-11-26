@@ -413,3 +413,11 @@ current recipe contains no custom solo-call lifetime, screen-share
 resolution or frame-rate, or FLAC transmission patch. Those behaviors
 should be verified independently of the voice options and the Android
 screen-capture manifest check.
+
+To install a local APK from this exact batch, run
+`sh verify-installed-builds.sh --install /path/to/verified.apk`.
+It checks the local digest and requires the corresponding original
+app to be present. If the verified clone is already installed, it skips
+installation. Otherwise it checks the APK signature, uses Android's
+streamed in-place install, and checks the installed digest afterward.
+Keep the normal ADB device selection pointed at your intended phone.
