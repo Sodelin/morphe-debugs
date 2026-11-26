@@ -6,5 +6,5 @@ printf '%s  %s\n' e0e49525e1fbe1108d6cfd7398d39e0cd489c58a753e63653c1e8f11a00997
 classes=$(mktemp -d .cache/debugs-XXXXXX)
 trap 'rm -r -- "$classes"' EXIT
 javac --release 8 -cp "$cli" -d "$classes" patches/src/main/java/app/debugs/patches/RedditLauncherPatch.java
-jar cfm .cache/debugs-0.1.0.mpp patches/bundle.mf -C "$classes" .
+jar --create --date=2000-01-01T00:00:00Z --file .cache/debugs-0.1.0.mpp --manifest patches/bundle.mf -C "$classes" .
 java -jar "$cli" list-patches --patches=.cache/debugs-0.1.0.mpp
