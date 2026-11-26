@@ -59,3 +59,18 @@ Android accepted the same-signature update through background ADB.
   patch implementations and dependencies before installation. No Discord
   build was installed, and the listing does not prove higher stream
   quality or uninterrupted solo calls.
+
+### Discord 350.8 input verification
+
+[Venus v1.20.0](https://github.com/VenusIsJaded/Venus-Patches/releases/tag/v1.20.0)
+targets Discord 350.8 Stable. Its MPP matched GitHub's SHA-256
+5588f69a5f12b868538112b70f6c666171fbed547719980e979af8b811404f8e.
+The current com.discord package reports Morphe Manager as installer.
+Its copied APK's Hermes bundle SHA-256 is
+a03c3bdebd2afe0f608321de0b2808b072fb0997846dff74680376d7b537638d.
+The release's input guard requires
+0f2e1735fc0ed5d7f7068aaae8cfb603987a346584b3eea0fd8790df38e2a8b2.
+The UI batch stopped in that guard without producing an APK or changing
+the installed Discord package. Matching the display version alone is
+insufficient. A trusted original APKM matching the pinned bundle is needed.
+No account, call, or streaming test was performed.
