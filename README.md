@@ -104,3 +104,10 @@ returned HTTP 403, and another mirror's listed 350.8 download page
 returned HTTP 404. Neither supplied bytes for verification. The build
 needs the original base plus matching ABI and density splits, verified as
 one package/version/signing set before using Morphe's bundle workflow.
+
+The official Manager 2.7.1 APK already in Downloads matched the GitHub
+release digest and had the same signing certificate as the installed
+2.6.0 APK. Android accepted the in-place background update. The old
+APK was retained locally. No Manager import or Discord bundle test was
+performed in this update. The public Debugs MPP checksum verified after
+a fresh GitHub release download.
