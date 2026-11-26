@@ -10,6 +10,7 @@ printf '%s\n' \
   'e0e49525e1fbe1108d6cfd7398d39e0cd489c58a753e63653c1e8f11a0099757  .cache/morphe-desktop-2.3.0-all.jar' |
   sha256sum -c -
 umask 077
+python verify-discord-input.py "$input"
 java -Xmx1800m -jar .cache/morphe-desktop-2.3.0-all.jar patch \
   -p .cache/venus-1.20.0.mpp --exclusive \
   -e 'Custom branding' -e 'Load full-quality images' \

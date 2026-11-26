@@ -147,3 +147,10 @@ unresolved required-split declaration. Its base-only refusal was tested.
 The complete Discord build is still untested. A listing for the 350.8
 XAPK was found on Captain Droid, but the download could not be obtained
 through the current route. Do not treat the listing as verified APK bytes.
+
+The Discord recipe now preflights the ZIP members using apksigner and
+aapt before processing. It requires the observed original Discord signer,
+version code 350008, the Venus-expected JavaScript SHA-256 in the base, and
+distinct ARM64 and density split declarations. A renamed base-only APKS
+fixture passed signer and base checks and refused for the missing splits.
+This negative control does not establish a complete Discord build.
