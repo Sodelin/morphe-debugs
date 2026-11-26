@@ -74,3 +74,22 @@ The UI batch stopped in that guard without producing an APK or changing
 the installed Discord package. Matching the display version alone is
 insufficient. A trusted original APKM matching the pinned bundle is needed.
 No account, call, or streaming test was performed.
+
+### Discord 350.8 broad patch build
+
+An original base APK was found in Downloads. Its APK signature verified,
+its package/version was com.discord/350008, and its JavaScript bundle
+matched the Venus v1.20.0 input guard. All 15 opt-in patches applied
+without suppressing errors: Custom branding, Load full-quality images,
+Show file sizes when attaching, Tap mentions to open profiles, Custom
+themes, Message highlights, Use your phone's emojis, Use your phone's
+font, Voice channel options, Material You colors, Pastel name colors,
+Jump to first message, Icon packs, Disable analytics, and Disable
+advertising identifiers. Credit: VenusIsJaded and upstream contributors.
+
+The signed output had the separate com.discord.venus package, but Android
+refused installation with INSTALL_FAILED_MISSING_SPLIT. The local original
+was the base APK and is missing companion splits. The complete 350.8
+APKM with its companion splits is required for the next install trial.
+The existing Discord app was not replaced. Runtime UI, calling and
+streaming remain untested. No Discord APK was published.
