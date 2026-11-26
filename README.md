@@ -455,3 +455,7 @@ For the installed Music Debugs batch, the patched manifest names
 on the target Android device found that package installed and enabled
 for user 0 at version 7.3.0. This confirms the named companion is
 available locally. Sign-in and playback still require a live check.
+
+The 0.2.0 patch bundle was rebuilt from release source and matched the
+downloaded GitHub asset SHA-256
+`cd2c16d24102b6d746c48eb6b94ce0fcfcbf26dc438914843324541873841ea3`.
