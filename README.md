@@ -154,3 +154,20 @@ version code 350008, the Venus-expected JavaScript SHA-256 in the base, and
 distinct ARM64 and density split declarations. A renamed base-only APKS
 fixture passed signer and base checks and refused for the missing splits.
 This negative control does not establish a complete Discord build.
+
+### Complete Discord archive and background install
+
+The versioned APKPure .net route supplied the 350008 XAPK (SHA-256
+1495419b4e10051cccd274c9d48de84f2ada98e23f679a615b6f3cc51ba3c88a).
+The preflight verified the original signer on all four APKs, their
+package/version, the base bundle digest and ARM64 and density declarations.
+Desktop merged the base, ARM64, English and XXHDPI modules and applied
+all 15 selected patches without suppressing errors. Removed the explicit
+keystore path from the recipe because Desktop expects that file to
+exist; the normal local Desktop signing workflow signed this fresh clone.
+
+Android accepted com.discord.venus in the background, alongside the
+existing com.discord. Installed bytes matched the verified build
+(SHA-256 a19b11104f05c87277be7751b77380b34010e5146aff0e7675155a6017ebab55),
+and its launcher resolved. Runtime settings, voice, and video have not
+been exercised. No APK, archive or keystore was published.

@@ -19,7 +19,7 @@ java -Xmx1800m -jar .cache/morphe-desktop-2.3.0-all.jar patch \
   -e "Use your phone's emojis" -e "Use your phone's font" \
   -e 'Voice channel options' -e 'Material You colors' -e 'Pastel name colors' \
   -e 'Jump to first message' -e 'Icon packs' -e 'Disable analytics' \
-  -e 'Disable advertising identifiers' --keystore .cache/discord-venus-signing.keystore \
+  -e 'Disable advertising identifiers' \
   -o "$output" "$input"
 apksigner verify "$output"
 test "$(aapt dump badging "$output" 2>/dev/null | sed -n "s/^package: name='\([^']*\)'.*/\1/p")" = com.discord.venus
