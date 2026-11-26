@@ -347,3 +347,9 @@ Reddit Debugs clone:
 `8ab435348c8508e0affdeefbfe8eef1dedde45a8a2546ce2b6eaf746b25be058`.
 This connects the reproducible recipe to the already-installed artifact
 and its prior UI and rollback observations. No reinstall was needed.
+
+Run `sh verify-installed-builds.sh` with the intended Android device
+connected through ADB to verify this batch. The command checks that each
+original package is present and compares each installed clone's base APK
+to the digest of its verified build. It reads package metadata and APK
+bytes on the device and requires no account credentials.
