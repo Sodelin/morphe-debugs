@@ -39,3 +39,23 @@ clone package. The output APK's package ID and app label were checked with
 aapt. The bundle is tested in Morphe Desktop; Manager import is unverified.
 
 Android accepted the same-signature update through background ADB.
+
+## Maximum-mods compatibility pass
+
+- Reddit 2026.24.0 with Morphe Patches 2.3.0: 31 selected in a diagnostic
+  build, 29 failed, Clone app and Start as guest applied. The partial
+  output was not installed. The Debugs label build remains installed.
+- YouTube and YouTube Music stock inputs are split APKs, at
+  21.47.483-BETA and 9.46.55 respectively. The pinned bundle reports
+  117 patches for YouTube 21.30.216 and 56 for Music 9.30.53. Use a
+  compatible, trusted input rather than forcing those stock versions.
+- Discord: [Venus Patches v1.21.1 by VenusIsJaded](https://github.com/VenusIsJaded/Venus-Patches/releases/tag/v1.21.1)
+  is GPL-3.0 and its release bundle matched GitHub's published SHA-256
+  ad8f1ef02e7461286abf725b8205660fd187e6ce3fdb06d64a07b75da094bd47.
+  The CLI lists 78 patches for Discord 351.11 Stable, while the phone
+  has 350.8 Stable. This is a compatibility finding, not a code audit.
+  Candidate UI patches include Material You, landscape chat, system
+  emojis, double-tap reply and message highlights. Evaluate individual
+  patch implementations and dependencies before installation. No Discord
+  build was installed, and the listing does not prove higher stream
+  quality or uninterrupted solo calls.
