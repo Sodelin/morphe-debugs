@@ -93,3 +93,14 @@ was the base APK and is missing companion splits. The complete 350.8
 APKM with its companion splits is required for the next install trial.
 The existing Discord app was not replaced. Runtime UI, calling and
 streaming remain untested. No Discord APK was published.
+
+The rebuilt manifest confirms Android's required split types are
+`base__abi` and `base__density`. The source base manifest has the same
+requirements. No APKM, XAPK or APKS archive was found in the scoped phone
+Downloads, Documents, or Termux home search. One older Venus v1.19.0
+export is a single patched APK (another copy is invalid), so it cannot
+supply publisher-signed original splits. A versioned mirror query
+returned HTTP 403, and another mirror's listed 350.8 download page
+returned HTTP 404. Neither supplied bytes for verification. The build
+needs the original base plus matching ABI and density splits, verified as
+one package/version/signing set before using Morphe's bundle workflow.
