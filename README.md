@@ -308,3 +308,11 @@ permission was granted or denied. Both virtual displays disappeared
 after their original sessions ended. No app screen was retained.
 This verifies startup only. Menus, feature toggles, sign-in, and
 playback were not exercised.
+
+A follow-up on a dedicated Reddit Debugs virtual display verified the
+expanded build renders a public feed with its Log in button still present.
+The initial surface was black while the UI loaded. A later sample showed
+the guest feed and Android's notifications prompt labeled Reddit Debugs.
+No permission choice or sign-in was submitted. Capture was streamed to
+memory, and no screenshot or video file was retained. This verifies the
+guest startup path, without verifying individual settings or playback.
