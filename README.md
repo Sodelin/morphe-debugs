@@ -449,3 +449,9 @@ included returned 22 launcher activities for the installed clone. All
 manifest check covers 23 aliases; the package-manager result covers
 only the activities Android returned. No component state was changed,
 and the launcher UI was not opened.
+
+For the installed Music Debugs batch, the patched manifest names
+`app.revanced.android.gms` as the GmsCore companion. A read-only check
+on the target Android device found that package installed and enabled
+for user 0 at version 7.3.0. This confirms the named companion is
+available locally. Sign-in and playback still require a live check.
