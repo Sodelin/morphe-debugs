@@ -274,3 +274,14 @@ The expanded batch can be rebuilt with
 original archive and all three build assets, verifies the signed clone's
 identity and ARM64 libraries, and leaves installation separate. A complete
 repeat build passed, and the ARMv7 archive was refused before patching.
+
+## Installed batch checkpoint
+
+The installed APK hashes match the verified 27-patch Venus, 29-patch
+Reddit Debugs, and 16-patch Music Debugs artifacts. Each installed clone
+also matches the certificate of its retained companion APK. The Venus
+companion is the 15-patch build, Reddit's is the 15-patch build, and
+Music's is the repeat build. Android resolved all three launcher
+activities. Venus had a live process. Reddit and Music were still marked
+not launched. No app was opened, stopped or reinstalled for this check.
+This checkpoint does not verify settings or feature behavior.
