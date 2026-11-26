@@ -253,3 +253,18 @@ label applied as a second pass.
 Android accepted the same-signature background update to the Debugs
 clone and installed bytes matched that build. The previous guest-only
 build remains the rollback artifact. No account or feature UI was tested.
+
+### Expanded Reddit Debugs batch
+
+The same verified 2624051 ARM64 archive built with 28 selected MorpheApp
+patches in exclusive mode. The 14 additions to the first batch were
+Custom font, Force system font, Hide Ask button, Hide communities shelf,
+Hide media viewer components, Disable modern home, Disable screenshot
+popup, Hide Reddit search, Hide sidebar components, Hide Trending
+shelves, App icon, Download location, Open links externally, and
+Redgifs audio. The independent Debugs label applied in a separate pass.
+
+Android accepted the expanded 29-patch APK as a same-signer background
+update. Installed bytes matched the expanded APK, and the 15-patch build
+remains available for rollback. App settings, playback and feature
+behavior are still unverified. No target APK was uploaded.
