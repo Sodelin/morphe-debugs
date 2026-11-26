@@ -3,7 +3,7 @@ set -eu
 cd "$(dirname "$0")"
 input=$(realpath "${1:?Usage: sh build-discord-venus.sh ORIGINAL_SPLIT_ARCHIVE}")
 case "$input" in *.apkm|*.apks|*.xapk) ;; *) echo 'Provide a complete original split archive.' >&2; exit 1;; esac
-output=.cache/discord-venus-batch.apk
+output=.cache/discord-venus-expanded.apk
 test ! -e "$output"
 printf '%s\n' \
   '5588f69a5f12b868538112b70f6c666171fbed547719980e979af8b811404f8e  .cache/venus-1.20.0.mpp' \
@@ -19,6 +19,10 @@ java -Xmx1800m -jar .cache/morphe-desktop-2.3.0-all.jar patch \
   -e "Use your phone's emojis" -e "Use your phone's font" \
   -e 'Voice channel options' -e 'Material You colors' -e 'Pastel name colors' \
   -e 'Jump to first message' -e 'Icon packs' -e 'Disable analytics' \
+  -e 'Copy profile bios' -e 'Show owner and mod tags' -e 'Fix unknown mentions' \
+  -e 'Show device indicators' -e 'Clean channel names' -e 'Venus button on profile bar' \
+  -e 'Hide blocked or ignored messages' -e 'Server info' -e 'Edit servers locally' \
+  -e 'Anonymous file names' -e 'Favourite any image or video' -e 'Read all button' \
   -e 'Disable advertising identifiers' \
   -o "$output" "$input"
 apksigner verify "$output"

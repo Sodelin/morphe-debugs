@@ -1,0 +1,18 @@
+{
+  "picker": true,
+  "clickableMentions": true,
+  "jumpToTop": true,
+  "messageHighlight": true,
+  "pastelize": true,
+  "voiceOptions": true,
+  "copyBios": true,
+  "staffTag": true,
+  "validUser": true,
+  "platformIndicators": true,
+  "cleanChannels": true,
+  "youBarSettings": true,
+  "hideBlocked": true,
+  "serverInfo": true,
+  "serverInfoFriends": false,
+  "materialYou": true
+}

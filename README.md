@@ -171,3 +171,19 @@ existing com.discord. Installed bytes matched the verified build
 (SHA-256 a19b11104f05c87277be7751b77380b34010e5146aff0e7675155a6017ebab55),
 and its launcher resolved. Runtime settings, voice, and video have not
 been exercised. No APK, archive or keystore was published.
+
+### Expanded Discord Venus batch
+
+The same verified Discord 350008 archive built with all 27 selected
+patches. Android accepted the same-certificate background update to
+com.discord.venus, and the installed APK hash matched the expanded
+build. The 15-patch APK remains available locally. The existing
+com.discord remains installed. Credit: VenusIsJaded and contributors.
+
+The exact v1.20.0 MPP embeds a settings parser that accepts a plain JSON
+preset through Discord Settings → Venus → Backup and restore. The separate
+Discord-Venus-Debugs-Starter.json copy in Downloads matches the checked-in
+preset. The preset keys were checked against that bundle. Restore can
+reset omitted keys, so save an existing Venus profile before importing.
+Import requires in-app confirmation and was not exercised. Build-time
+patch inclusion does not confirm a saved preference or runtime behavior.
