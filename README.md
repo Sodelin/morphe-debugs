@@ -316,3 +316,11 @@ the guest feed and Android's notifications prompt labeled Reddit Debugs.
 No permission choice or sign-in was submitted. Capture was streamed to
 memory, and no screenshot or video file was retained. This verifies the
 guest startup path, without verifying individual settings or playback.
+
+The expanded Reddit build opened Settings → Morphe in the signed-out
+virtual-display session. Navigation bar and Sidebar controls rendered.
+The Hide Games button switch began off, visibly switched on after one
+display-scoped tap, and returned to off after a second tap. This tests
+the switch interaction. The feed had no visible Games button at the
+time, so actual removal or persistence across restart was not tested.
+No capture file or account input was retained.
