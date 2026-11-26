@@ -333,3 +333,10 @@ display's foreground changed, so final preference restoration is
 unverified. Further input stopped. The copied frame was memory-only,
 and future capture must recheck the resumed package and display before
 each capture or interaction.
+
+The expanded Reddit headless recipe pins the published
+[v0.1.0 reproducible bundle](https://github.com/Sodelin/morphe-debugs/releases/tag/v0.1.0-reproducible).
+An end-to-end rebuild from the pinned 2624051 XAPK verified 28 upstream
+patch applications and the separate launcher label. The recipe checked
+the APK signature, clone package, Reddit Debugs label, and ARM64 libraries.
+This exact rebuild was verified offline and was not installed.

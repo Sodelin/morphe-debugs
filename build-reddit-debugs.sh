@@ -11,7 +11,7 @@ debugs=.cache/debugs-0.1.0.mpp
 printf '%s\n' \
   "e0e49525e1fbe1108d6cfd7398d39e0cd489c58a753e63653c1e8f11a0099757  $cli" \
   "1c37549274a2b6cf7f2e3e099d9b8cb641880b8a7dac323a95638a06bb4509a9  $mpp" \
-  "a70bafe5e3853095412ed502271e0e488c800113064cb6785cd93766c0bb32f0  $debugs" |
+  "82c709cec36ac9ba3ec74a3da89caf77cb184f2626345633c275976593baa3fe  $debugs" |
   sha256sum -c -
 test "$(sha256sum "$input" | cut -d ' ' -f 1)" = 918f78dd1cd5dbefe808d5dbe9c69338b5cbf23075cd40939ae6e315530e74d8
 scratch=$(mktemp -d .cache/reddit-build-XXXXXX)
