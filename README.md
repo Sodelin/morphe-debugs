@@ -268,3 +268,9 @@ Android accepted the expanded 29-patch APK as a same-signer background
 update. Installed bytes matched the expanded APK, and the 15-patch build
 remains available for rollback. App settings, playback and feature
 behavior are still unverified. No target APK was uploaded.
+
+The expanded batch can be rebuilt with
+`sh build-reddit-debugs.sh ORIGINAL_2624051_XAPK`. The recipe pins the
+original archive and all three build assets, verifies the signed clone's
+identity and ARM64 libraries, and leaves installation separate. A complete
+repeat build passed, and the ARMv7 archive was refused before patching.
