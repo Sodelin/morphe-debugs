@@ -7,11 +7,11 @@ test ! -e "$output"
 umask 077
 cli=.cache/morphe-desktop-2.3.0-all.jar
 mpp=.cache/patches-2.3.0.mpp
-debugs=.cache/debugs-0.1.0.mpp
+debugs=.cache/debugs-0.2.0.mpp
 printf '%s\n' \
   "e0e49525e1fbe1108d6cfd7398d39e0cd489c58a753e63653c1e8f11a0099757  $cli" \
   "1c37549274a2b6cf7f2e3e099d9b8cb641880b8a7dac323a95638a06bb4509a9  $mpp" \
-  "82c709cec36ac9ba3ec74a3da89caf77cb184f2626345633c275976593baa3fe  $debugs" |
+  "cd2c16d24102b6d746c48eb6b94ce0fcfcbf26dc438914843324541873841ea3  $debugs" |
   sha256sum -c -
 test "$(sha256sum "$input" | cut -d ' ' -f 1)" = 918f78dd1cd5dbefe808d5dbe9c69338b5cbf23075cd40939ae6e315530e74d8
 scratch=$(mktemp -d .cache/reddit-build-XXXXXX)

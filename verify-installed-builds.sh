@@ -71,7 +71,7 @@ while read -r original patched digest <&3; do
   fi
 done 3<<'BATCH'
 com.discord com.discord.venus 0b56b2e3845800dcc5f8fa377d4e151befc84e5d987248d904457a2fb0895c92
-com.reddit.frontpage com.reddit.frontpage.morphe 8ab435348c8508e0affdeefbfe8eef1dedde45a8a2546ce2b6eaf746b25be058
+com.reddit.frontpage com.reddit.frontpage.morphe 95241e7514837f84d699b103564218da2e4fd127a9fad4f0c4bc600d290e3100
 com.google.android.apps.youtube.music com.google.android.apps.youtube.music.debugs 0aad39ad26c0b4047efe9dea4bde1cff160c2732879c113a322f2dca8c31c689
 BATCH
 

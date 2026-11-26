@@ -438,5 +438,7 @@ aliases, which otherwise overrides the application label. Build
 `debugs-0.2.0.mpp` with `sh build-debug-bundle.sh` and apply the same
 opt-in patch name to the Reddit clone. The signed candidate was checked
 against the previous manifest and all launcher aliases retained their
-distinct icons and received the Debugs label. The pinned installation
-batch still uses 0.1.0. The 0.2.0 candidate has not been installed.
+distinct icons and received the Debugs label. The full 29-patch recipe reproduced the
+signed 0.2.0 APK byte for byte. Android accepted the same-signer in-place
+update and its installed SHA-256 matched. The prior 0.1.0 APK remains
+available locally for rollback. Launcher icon switching was not exercised.
