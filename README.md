@@ -442,3 +442,10 @@ distinct icons and received the Debugs label. The full 29-patch recipe reproduce
 signed 0.2.0 APK byte for byte. Android accepted the same-signer in-place
 update and its installed SHA-256 matched. The prior 0.1.0 APK remains
 available locally for rollback. Launcher icon switching was not exercised.
+
+An on-device Android package-manager query with disabled components
+included returned 22 launcher activities for the installed clone. All
+22 reported the Reddit Debugs label on the activity itself. The APK
+manifest check covers 23 aliases; the package-manager result covers
+only the activities Android returned. No component state was changed,
+and the launcher UI was not opened.
