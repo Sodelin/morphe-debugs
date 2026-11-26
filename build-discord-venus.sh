@@ -3,7 +3,7 @@ set -eu
 cd "$(dirname "$0")"
 input=$(realpath "${1:?Usage: sh build-discord-venus.sh ORIGINAL_SPLIT_ARCHIVE [OUTPUT]}")
 case "$input" in *.apkm|*.apks|*.xapk) ;; *) echo 'Provide a complete original split archive.' >&2; exit 1;; esac
-output=${2:-.cache/discord-venus-expanded.apk}
+output=${2:-.cache/discord-venus-parity.apk}
 test ! -e "$output"
 printf '%s\n' \
   '5588f69a5f12b868538112b70f6c666171fbed547719980e979af8b811404f8e  .cache/venus-1.20.0.mpp' \
@@ -27,12 +27,12 @@ if ! java -Xmx1800m -jar .cache/morphe-desktop-2.3.0-all.jar patch \
   -e 'Show device indicators' -e 'Clean channel names' -e 'Venus button on profile bar' \
   -e 'Hide blocked or ignored messages' -e 'Server info' -e 'Edit servers locally' \
   -e 'Anonymous file names' -e 'Favourite any image or video' -e 'Read all button' \
-  -e 'Disable advertising identifiers' \
+  -e 'Disable advertising identifiers' -e 'Double-tap to reply' -e 'Hide typing indicator' \
   -o "$candidate" "$input" >"$log" 2>&1; then
   tail -25 "$log" >&2
   exit 1
 fi
-test "$(grep -c '^INFO: Applied:' "$log")" -eq 27
+test "$(grep -c '^INFO: Applied:' "$log")" -eq 29
 apksigner verify "$candidate"
 test "$(aapt dump badging "$candidate" 2>/dev/null | sed -n "s/^package: name='\([^']*\)'.*/\1/p")" = com.discord.venus
 manifest=$(aapt dump xmltree "$candidate" AndroidManifest.xml)

@@ -467,3 +467,25 @@ available locally. Sign-in and playback still require a live check.
 The 0.2.0 patch bundle was rebuilt from release source and matched the
 downloaded GitHub asset SHA-256
 `cd2c16d24102b6d746c48eb6b94ce0fcfcbf26dc438914843324541873841ea3`.
+
+### Discord Venus parity candidate
+
+The working com.discord APK on the phone matched the retained Venus
+1.19.0 APK. The com.discord.venus clone uses Venus 1.20.0. Both report
+Discord 350.8, both currently have microphone and media-projection
+permissions, and their ARM64 libdiscord.so hashes match. These checks
+do not identify the reported call failure. The crash buffer check found
+no retained crash entry for either package.
+
+The 29-patch parity candidate adds the older build's double-tap reply
+and hide-typing modules. The signed APK contains the corresponding
+bootstrap switches and passed the capture-service manifest check.
+The installed clone remains on the earlier 27-patch build.
+The new candidate has no screen-quality selector or FLAC transport.
+
+The target phone reports a physical display of 1440 by 3120. Actual
+capture dimensions depend on display orientation and the selected
+capture surface. Receiver verification must measure encoded picture
+dimensions and frame rate independently of the Android capture size.
+A second transport is required for lossless FLAC playback if both
+viewers are using the normal Discord Opus voice path.
