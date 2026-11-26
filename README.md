@@ -16,7 +16,7 @@ under the exact names shown. The recipes check their digests before use.
 | `morphe-desktop-2.3.0-all.jar` | [Morphe Desktop 2.3.0](https://github.com/MorpheApp/morphe-desktop/releases/tag/v2.3.0) |
 | `patches-2.3.0.mpp` | [Morphe Patches 2.3.0](https://github.com/MorpheApp/morphe-patches/releases/tag/v2.3.0) |
 | `venus-1.20.0.mpp` | [Venus Patches 1.20.0](https://github.com/VenusIsJaded/Venus-Patches/releases/tag/v1.20.0) |
-| `debugs-0.1.0.mpp` | [Debugs reproducible bundle](https://github.com/Sodelin/morphe-debugs/releases/tag/v0.1.0-reproducible), or build with `sh build-debug-bundle.sh` |
+| `debugs-0.1.0.mpp` | [Debugs reproducible bundle](https://github.com/Sodelin/morphe-debugs/releases/tag/v0.1.0-reproducible), |
 
 Supply the publisher-signed app inputs separately. The recipes expect
 Discord 350008 with its ARM64 and density splits, the pinned Reddit
@@ -65,8 +65,8 @@ label Reddit Debugs so it can be told apart from stock Reddit. The bundle
 compiles against the pinned Morphe Desktop CLI and the CLI lists the patch.
 The upstream Clone app patch remains a separate MorpheApp contribution.
 
-Run `sh build-debug-bundle.sh` and apply the resulting bundle to a clone
-using `patch -p .cache/debugs-0.1.0.mpp --exclusive -e 'Debugs launcher label'`.
+For the verified 0.1.0 batch, use the pinned release bundle. Apply it to a
+clone using `patch -p .cache/debugs-0.1.0.mpp --exclusive -e 'Debugs launcher label'`.
 Keep the same signing identity for updates. The patch accepts only the
 clone package. The output APK's package ID and app label were checked with
 aapt. The bundle is tested in Morphe Desktop; Manager import is unverified.
@@ -429,3 +429,14 @@ different digest, streamed the 29-patch update, and verified the
 installed result. All three clones matched the batch after the test.
 This verifies the update path without opening app accounts or checking
 their data in the UI.
+
+### Debugs 0.2.0 launcher labels
+
+The next independent bundle also labels the alternate Reddit launcher
+icons. Reddit supplies an explicit label on its alternate launcher
+aliases, which otherwise overrides the application label. Build
+`debugs-0.2.0.mpp` with `sh build-debug-bundle.sh` and apply the same
+opt-in patch name to the Reddit clone. The signed candidate was checked
+against the previous manifest and all launcher aliases retained their
+distinct icons and received the Debugs label. The pinned installation
+batch still uses 0.1.0. The 0.2.0 candidate has not been installed.
