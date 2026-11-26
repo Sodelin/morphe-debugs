@@ -285,3 +285,11 @@ Music's is the repeat build. Android resolved all three launcher
 activities. Venus had a live process. Reddit and Music were still marked
 not launched. No app was opened, stopped or reinstalled for this check.
 This checkpoint does not verify settings or feature behavior.
+
+The installed 29-patch Reddit Debugs APK was rolled back with a
+same-certificate replacement install to the retained 15-patch APK, then
+restored to the 29-patch APK. Android accepted both steps, and the APK
+read back from the installed path matched each expected SHA-256 in
+sequence. Neither install uninstalled the package, and com.reddit.frontpage
+remained present. This verifies package rollback only; the app was not
+opened and account, preferences and playback were not exercised.
